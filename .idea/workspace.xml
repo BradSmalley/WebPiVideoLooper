@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fbe3ff-7326-4f5c-96c6-9b0b9cdcd0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/directory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omxplayer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playlist.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPiVideoLooper.ini" beforeDir="false" afterPath="$PROJECT_DIR$/WebPiVideoLooper.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,32 +41,32 @@
           <entry key="bat" value="99" />
           <entry key="html" value="83" />
           <entry key="ini" value="119" />
-          <entry key="py" value="1904" />
+          <entry key="py" value="1907" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="83" />
           <entry key="PLAIN_TEXT" value="218" />
-          <entry key="Python" value="1904" />
+          <entry key="Python" value="1907" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="138" column="20" lean-forward="true" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+            <state relative-caret-position="139">
+              <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1533066568131" expanded="true" signature="1037:1038" ph="..." />
-                <marker date="1533066568131" expanded="true" signature="1074:1320" ph="..." />
-                <marker date="1533066568131" expanded="true" signature="1366:1371" ph="..." />
-                <marker date="1533066568131" expanded="true" signature="1366:1448" ph="..." />
-                <marker date="1533066568131" expanded="true" signature="1468:1469" ph="..." />
+                <marker date="1533068116230" expanded="true" signature="1037:1038" ph="..." />
+                <marker date="1533068116230" expanded="true" signature="1074:1310" ph="..." />
+                <marker date="1533068116230" expanded="true" signature="1356:1361" ph="..." />
+                <marker date="1533068116230" expanded="true" signature="1356:1438" ph="..." />
+                <marker date="1533068116230" expanded="true" signature="1458:1459" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebPiVideoLooper.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -160,9 +154,9 @@
         <option value="$PROJECT_DIR$/go.bat" />
         <option value="$PROJECT_DIR$/playlist.py" />
         <option value="$PROJECT_DIR$/omxplayer.py" />
-        <option value="$PROJECT_DIR$/application.py" />
         <option value="$PROJECT_DIR$/directory.py" />
         <option value="$PROJECT_DIR$/WebPiVideoLooper.ini" />
+        <option value="$PROJECT_DIR$/application.py" />
       </list>
     </option>
   </component>
@@ -232,7 +226,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -243,7 +237,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -303,25 +297,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="138" column="20" lean-forward="true" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1533066568131" expanded="true" signature="1037:1038" ph="..." />
-            <marker date="1533066568131" expanded="true" signature="1074:1320" ph="..." />
-            <marker date="1533066568131" expanded="true" signature="1366:1371" ph="..." />
-            <marker date="1533066568131" expanded="true" signature="1366:1448" ph="..." />
-            <marker date="1533066568131" expanded="true" signature="1468:1469" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebPiVideoLooper.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1533068116230" expanded="true" signature="1037:1038" ph="..." />
+            <marker date="1533068116230" expanded="true" signature="1074:1310" ph="..." />
+            <marker date="1533068116230" expanded="true" signature="1356:1361" ph="..." />
+            <marker date="1533068116230" expanded="true" signature="1356:1438" ph="..." />
+            <marker date="1533068116230" expanded="true" signature="1458:1459" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

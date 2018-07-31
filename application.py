@@ -46,7 +46,7 @@ def looper():
 
 @app.route("/looper/start/")
 def start_looper():
-    t = threading.Thread(target=_blank_screen)
+    t = threading.Thread(target=run)
     t.start()
 
     # TODO:  Start the videos
