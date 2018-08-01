@@ -6,64 +6,13 @@ import socket
 import pygame
 import time
 import multiprocessing
+import threading
 import os
 import re
 
 from omxplayer import OMXPlayer
 from directory import DirectoryReader
 from playlist import Playlist
-
-_config = ConfigParser()  # TODO:  Give command line option
-_config.read('WebPiVideoLooper.ini')
-app = Flask("__name__")
-hostname = socket.gethostname()
-ip = socket.gethostbyname(hostname)
-
-pygame.display.init()
-pygame.font.init()
-pygame.mouse.set_visible(False)
-size = (pygame.display.Info().current_w, pygame.display.Info().current_h)
-_screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
-
-_stop = False
-_player = OMXPlayer(_config)
-_interrupt_on_new = True  # TODO: Get from config
-_reader = DirectoryReader(_config)
-_is_random = False
-_small_font = pygame.font.Font(None, 50)
-_big_font = pygame.font.Font(None, 250)
-_fgcolor = (255, 255, 255)
-_bgcolor = (0, 0, 0)
-_waiting_to_build_playlist = True
-_looper_process = multiprocessing.Process(target=run)
-
-print("Your Computer Name is:" + hostname)
-print("Your Computer IP Address is:" + ip)
-
-
-@app.route("/looper/")
-def looper():
-    return render_template("index.html", addr=ip)
-
-
-@app.route("/looper/start/")
-def start_looper():
-
-    if _looper_process.is_alive():
-        _looper_process.terminate()
-        time.sleep(3)  # Time for process to terminate
-
-    _looper_process.start()
-    return render_template("index.html", addr=ip)
-
-
-@app.route("/looper/stop/")
-def stop_looper():
-    if _looper_process.is_alive():
-        _looper_process.terminate()
-        time.sleep(3)
-
-    return render_template("index.html", addr=ip)
 
 
 def _blank_screen():
@@ -229,3 +178,57 @@ def _is_number(s):
         return True
     except ValueError:
         return False
+
+
+_config = ConfigParser()  # TODO:  Give command line option
+_config.read('WebPiVideoLooper.ini')
+app = Flask("__name__")
+hostname = socket.gethostname()
+ip = socket.gethostbyname(hostname)
+
+pygame.display.init()
+pygame.font.init()
+pygame.mouse.set_visible(False)
+size = (pygame.display.Info().current_w, pygame.display.Info().current_h)
+_screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
+
+_stop = False
+_player = OMXPlayer(_config)
+_interrupt_on_new = True  # TODO: Get from config
+_reader = DirectoryReader(_config)
+_is_random = False
+_small_font = pygame.font.Font(None, 50)
+_big_font = pygame.font.Font(None, 250)
+_fgcolor = (255, 255, 255)
+_bgcolor = (0, 0, 0)
+_waiting_to_build_playlist = True
+_looper_thread = threading.Thread(target=run)
+_looper_process = multiprocessing.Process(target=_looper_thread)
+
+print("Your Computer Name is:" + hostname)
+print("Your Computer IP Address is:" + ip)
+
+
+@app.route("/looper/")
+def looper():
+    return render_template("index.html", addr=ip)
+
+
+@app.route("/looper/start/")
+def start_looper():
+
+    if _looper_process.is_alive():
+        _looper_process.terminate()
+        time.sleep(3)  # Time for process to terminate
+
+    _looper_process.start()
+    return render_template("index.html", addr=ip)
+
+
+@app.route("/looper/stop/")
+def stop_looper():
+    if _looper_process.is_alive():
+        _looper_process.terminate()
+        time.sleep(3)
+
+    return render_template("index.html", addr=ip)
