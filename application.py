@@ -202,8 +202,7 @@ _big_font = pygame.font.Font(None, 250)
 _fgcolor = (255, 255, 255)
 _bgcolor = (0, 0, 0)
 _waiting_to_build_playlist = True
-_looper_thread = threading.Thread(target=run)
-_looper_process = multiprocessing.Process(target=_looper_thread)
+_looper_process = multiprocessing.Process(target=run)
 
 print("Your Computer Name is:" + hostname)
 print("Your Computer IP Address is:" + ip)
