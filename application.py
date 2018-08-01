@@ -5,7 +5,7 @@ from configparser import ConfigParser
 import socket
 import pygame
 import time
-import threading
+import multiprocessing
 import os
 import re
 
@@ -35,6 +35,7 @@ _big_font = pygame.font.Font(None, 250)
 _fgcolor = (255, 255, 255)
 _bgcolor = (0, 0, 0)
 _waiting_to_build_playlist = True
+_looper_process = multiprocessing.Process(target=run)
 
 print("Your Computer Name is:" + hostname)
 print("Your Computer IP Address is:" + ip)
@@ -47,16 +48,21 @@ def looper():
 
 @app.route("/looper/start/")
 def start_looper():
-    t = threading.Thread(target=run)
-    t.start()
 
-    # TODO:  Start the videos
+    if _looper_process.is_alive():
+        _looper_process.terminate()
+        time.sleep(3)  # Time for process to terminate
+
+    _looper_process.start()
     return render_template("index.html", addr=ip)
 
 
 @app.route("/looper/stop/")
 def stop_looper():
-    # TODO:  Stop the videos
+    if _looper_process.is_alive():
+        _looper_process.terminate()
+        time.sleep(3)
+
     return render_template("index.html", addr=ip)
 
 
