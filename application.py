@@ -34,6 +34,7 @@ _small_font = pygame.font.Font(None, 50)
 _big_font = pygame.font.Font(None, 250)
 _fgcolor = (255, 255, 255)
 _bgcolor = (0, 0, 0)
+_waiting_to_build_playlist = True
 
 print("Your Computer Name is:" + hostname)
 print("Your Computer IP Address is:" + ip)
@@ -70,23 +71,26 @@ def _blank_screen():
 def run():
     """Main program loop. """
     # Main loop to play videos in the playlist and listen for file changes.
+    print("Run() started.")
     _running = True
+    global _waiting_to_build_playlist
+    playlist = _build_playlist()
     while _running:
         if _stop:
             print('stop_file found.  Exiting...')
             _player.stop(3)
             return
         # Load and play a new movie if nothing is playing.
-        # if not _player.is_playing():
-            # if _waiting_to_build_playlist:
-            #    playlist = _build_playlist()
-            #    _prepare_to_run_playlist(playlist);
-            #   _waiting_to_build_playlist = False
-            # movie = playlist.get_next()
-            # if movie is not None:
-            #    # Start playing the first available movie.
-            #    print('Playing movie: {0}'.format(movie))
-            #   _player.play(movie, loop=False, vol=0)
+        if not _player.is_playing():
+            if _waiting_to_build_playlist:
+                playlist = _build_playlist()
+                _prepare_to_run_playlist(playlist)
+                _waiting_to_build_playlist = False
+            movie = playlist.get_next()
+            if movie is not None:
+                # Start playing the first available movie.
+                print('Playing movie: {0}'.format(movie))
+                _player.play(movie, loop=False, vol=0)
         # Check for changes in the file search path (like USB drives added)
         # and rebuild the playlist.
         if _reader.is_changed():
